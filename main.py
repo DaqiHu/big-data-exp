@@ -1,9 +1,18 @@
+# In[0] import and config
+
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import os
 import glob
 
 # 设置包含CSV文件的目录路径
-directory_path = 'archive'  # 请确保替换为实际目录路径
+directory_path = 'data'  # 请确保替换为实际目录路径
+
+# 读取CSV文件的路径
+file_path = r'data/PRSA_Data_Aotizhongxin_20130301-20170228.csv'  # 请确保替换为实际文件路径
+
+# In[1]
 
 # 获取目录中所有CSV文件的文件路径列表
 csv_files = glob.glob(os.path.join(directory_path, '*.csv'))
@@ -26,10 +35,7 @@ print(combined_df.head())
 print(combined_df.dtypes)
 
 
-
-
-# 读取CSV文件的路径
-file_path = r'archive//PRSA_Data_Aotizhongxin_20130301-20170228.csv'  # 请确保替换为实际文件路径
+# In[2]
 
 # 从CSV文件读取数据
 df = pd.read_csv(file_path)
@@ -62,8 +68,7 @@ print(df.head())
 print("\nData types after conversion:")
 print(df.dtypes)
 
-import matplotlib.pyplot as plt
-import seaborn as sns
+# In[3]
 
 # 设置绘图风格
 sns.set(style="whitegrid")
